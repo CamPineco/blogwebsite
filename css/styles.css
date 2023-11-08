@@ -1,0 +1,160 @@
+*{
+    box-sizing: border-box; /*for all the elements, padding and border are included in the width and height*/
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html{
+    font-size: 1rem; /*escalabilidad, se adapta mejor manteniendo su funcionalidad*/
+    height: 100%;
+}
+
+body, header, main, footer {
+    min-height: 50px;
+    margin: 0.5rem;
+    min-width: 400px;
+}
+
+body{
+    background-color: #f2f2f2;
+}
+
+
+
+/*celulares*/
+@media screen and (max-width: 640px){
+
+
+}
+
+
+
+/*tablets*/
+@media screen and (min-width: 640px) and (max-width:1280px){
+
+}
+
+/*faltaria el celular y la tablet apaisado, se supone que es con orientation*/
+
+
+
+/*desktop*/
+@media screen and (min-width:1280px){
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+    }
+
+    header{
+        display: inline-flex;
+        max-height: 15vh;
+        margin-bottom: 0.5rem;
+        justify-content:space-between;
+    }
+
+    .header-menubar{
+        /*left: auto;*/
+        position: relative; /*en base al contenido anterior, div con logo*/
+        /*top: auto;*/
+        display: inline-block;
+        justify-content: flex-end;
+        /*margin: 0 0 2rem 1rem; arriba, derecha, abajo, izquierda*/
+    }
+
+}
+
+
+
+main{
+    min-height: 200px;
+    overflow: auto;
+    background-color: white;
+}
+
+header{
+    background: #fff;
+    box-shadow: 0 0 0.5rem rgb(83, 78, 76 / 50%);
+    
+}
+
+/* logo y menu */
+.header-logo{
+    width: auto;
+    display: inline-block;
+}
+
+.header-menubar{
+    left: auto;
+    position: relative; /*en base al contenido anterior, div con logo*/
+    /*top: auto;*/
+    width: 50%;
+    display: inline-block;
+    /*margin: 0 0 2rem 1rem; arriba, derecha, abajo, izquierda*/
+}
+
+.header-menubar ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    flex-wrap:nowrap; /*que no se me desborde*/
+    padding: 0.5rem;
+}
+
+.header-menubar li {
+    float: left; /*porque por defecto es un elemento en bloque, asi no se me va para abajo*/
+    font-weight: 700; /*que resalte mas*/
+    text-align: center;
+    margin: 0 0.5rem 0 ; /*no le cambio nada abajo asi no me cambia la configuracion anterior*/
+}
+
+.header-menubar a {
+    text-decoration: none;
+    color: black;
+}
+
+.header-menubar a:hover{
+    color: #654F76;
+}
+
+
+/* contenido ppal */
+main>div { 
+    /* border: 2px blue solid; */
+    min-height: 180px;
+    margin: 0.5rem;
+    height: auto; /*se adapta al contenido*/
+    float: left;
+    width: 65%;
+ /* en vez de aplicarle una clase, le aplico una regla de hijo directo */
+}
+
+main>aside{
+    /* border: 2px blue solid; */
+    min-height: 180px;
+    margin: 0.5rem;
+    min-width: 25%;
+    float: left;
+    width: auto;
+}
+
+.secciones {
+    /* border: 2px green solid; */
+    min-height: 20px;
+    margin: 0.5rem;
+    
+}
+
+
+#gif-ppal {
+    width: 100% ;
+}
+
+#gif-aside {
+    width: 100%;
+}
+
+
+footer{
+    background: rgb(255,255,255);
+}
